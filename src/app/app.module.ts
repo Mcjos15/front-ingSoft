@@ -8,6 +8,8 @@ import { LoginComponent } from './modules/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListadoComponent } from './modules/listado/listado.component';
 import { MensajesComponent } from './modules/mensajes/mensajes.component';
+import { MatTableModule } from '@angular/material/table'
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MensajesComponent } from './modules/mensajes/mensajes.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

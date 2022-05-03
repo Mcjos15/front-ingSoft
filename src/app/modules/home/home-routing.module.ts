@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { ListadoComponent } from '../listado/listado.component';
 import { MensajesComponent } from '../mensajes/mensajes.component';
+import { TableComponent } from 'src/app/shared/table/table.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
         {
           path: 'mensaje',
           component: MensajesComponent
+        },
+        {
+          path:'listar',
+          component: TableComponent
         },
         {
           path: '**',

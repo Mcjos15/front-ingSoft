@@ -19,6 +19,10 @@
                 <mat-icon mat-list-icon>receipt_long</mat-icon>
                 <span>Listado de usuarios</span>
             </a>
+            <a routerLink="./listar" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>receipt_long</mat-icon>
+                <span>Lista de usuarios</span>
+            </a>
 
             <a routerLink="./mensajes" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>question_answer</mat-icon>
@@ -50,5 +54,3 @@
         <router-outlet></router-outlet>
     </div>
 </mat-sidenav-container>
-
-

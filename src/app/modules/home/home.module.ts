@@ -16,6 +16,9 @@ import { HomeRoutingModule } from './home-routing.module';
     SharedModule,
     MaterialModule,
     HomeRoutingModule
+  ],
+  exports:[
+    MaterialModule
   ]
 })
 export class HomeModule { }
