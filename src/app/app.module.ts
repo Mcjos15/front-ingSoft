@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { LoginComponent } from './modules/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListadoComponent } from './modules/listado/listado.component';
-import { MensajesComponent } from './modules/mensajes/mensajes.component';
+import { ListadoComponent } from './components/listado/listado.component';
+import { MensajesComponent } from './components/mensajes/mensajes.component';
 import { MatTableModule } from '@angular/material/table'
 import { MaterialModule } from './material/material.module';
 
