@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { ListadoComponent } from '../listado/listado.component';
 import { MensajesComponent } from '../mensajes/mensajes.component';
-import { TableComponent } from 'src/app/shared/table/table.component';
+import { TableComponent } from 'src/app/usuarios/table/table.component';
 
 const routes: Routes = [
   {
