@@ -6,16 +6,18 @@ import { LoginComponent } from './usuarios/components/login/login.component';
 import { RegisterComponent } from './usuarios/components/register/register.component';
 
 const routes: Routes = [
-  {
+
+ { path: 'login',
+   component: LoginComponent ,
+   pathMatch: "full"
+  },
+    {
     path: '',
     component: HomeComponent,
     loadChildren: () => import('./usuarios/usuarios.module').then(m =>m.UsuariosModule),
     //pathMatch: "full"
   },
- { path: 'login',
-   component: LoginComponent ,
-   pathMatch: "full"
-  },
+
   { path: 'register',
    component: RegisterComponent,
    pathMatch: "full"

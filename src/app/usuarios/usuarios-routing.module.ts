@@ -4,15 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './pages/table/table.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {
-    path: '',
+ 
+  {// ver esto
     //ruta padre
+    path: '',
     component: HomeComponent,
     children:
       [
-
+        {
+          path: 'login',
+         component: LoginComponent ,
+        },
         {
           path: 'listado',
           component: TableComponent
@@ -20,7 +25,7 @@ const routes: Routes = [
         }
         ,
         {
-          path: 'mensaje',
+          path: 'mensajes',
           component: MensajesComponent
         },
         {
