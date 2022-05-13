@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { UserService } from '../../services/user.service';
 declare var $: any;
 @Component({
   selector: 'app-listar',
@@ -12,9 +13,9 @@ export class TableComponent implements OnInit, OnDestroy {
   title = 'datatables';
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
-  posts: any;
+  posts!: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -24,10 +25,9 @@ export class TableComponent implements OnInit, OnDestroy {
       lengthMenu: [5, 10, 25]
     };
 
-    this.http.get('http://jsonplaceholder.typicode.com/posts')
-      .subscribe(posts => {
-        this.posts = posts;
-        console.log(this.posts);
+    this.userService.getUsers()
+      .subscribe((posts:any) => {
+        this.posts = posts['data'];
 
         this.dtTrigger.next(void 0);
       });

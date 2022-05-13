@@ -13,9 +13,9 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let post of posts">
-                        <td>{{ post.id }}</td>
-                        <td>{{ post.title }}</td>
-                        <td>{{ post.body }}</td>
+                        <td>{{ post.id_usuario }}</td>
+                        <td>{{ post.nombre }}</td>
+                        <td>{{ post.primer_apellido }}</td>
                         <td><button mat-button color="info" [routerLink]="['/editar',post.id ]">
                       Editar
                   </button></td>
