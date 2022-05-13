@@ -7,10 +7,10 @@ import { RegisterComponent } from './usuarios/components/register/register.compo
 
 const routes: Routes = [
 
- { path: 'login',
+ /*{ path: 'login',
    component: LoginComponent ,
    pathMatch: "full"
-  },
+  },*/
     {
     path: '',
     component: HomeComponent,
