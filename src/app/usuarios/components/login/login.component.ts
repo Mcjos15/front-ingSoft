@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/users.interface';
+import {FormGroup,FormControl,Validators} from '@angular/forms'
+import {ApiService } from '../../../servicios/api.service';
+import {LoginI} from '../../../modelos/login.interface';
+import { data } from 'jquery';
+
+
 
 @Component({
   selector: 'app-login',
@@ -15,11 +21,25 @@ export class LoginComponent implements OnInit {
     cedula: '',
     id_sexo: ''
   };
-  constructor(private userService: UserService) { }
+
+  focus: any;
+  focus1: any;
+// validators del log in
+loginForm= new FormGroup({
+cedula: new FormControl('',Validators.required),
+password: new FormControl('',Validators.required)
+
+})
+
+
+
+  constructor(private userService: UserService,private api:ApiService) { }
 
   ngOnInit(): void {
   }
 
+
+  
   search() {
     if (this.user) {
       this.userService.getUserById(this.user)
@@ -27,4 +47,15 @@ export class LoginComponent implements OnInit {
       console.log(this.user);
     }
   }
+  
+  onLogin(form: LoginI){
+
+this.api.loginByCed(form).subscribe(data =>{
+//console.log(data);
+})
+
+  }
+
+
+
 }

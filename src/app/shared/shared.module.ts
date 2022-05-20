@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+//import { FooterComponent } from './footer/footer.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 //import { TableComponent } from '../usuarios/pages/table/table.component';
 import { MaterialModule } from '../material/material.module';
@@ -13,14 +13,14 @@ import { MaterialModule } from '../material/material.module';
   declarations: [
     SidebarComponent,
     HeaderComponent,
-    FooterComponent,
+    //FooterComponent,
     ErrorPageComponent,
   //  TableComponent
   ],
   exports:[
     SidebarComponent,
     HeaderComponent,
-    FooterComponent,
+    //FooterComponent,
    // TableComponent,
 
   ],

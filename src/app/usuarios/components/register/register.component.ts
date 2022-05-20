@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-
+  focus: any;
+  focus1: any;
+  focus2: any;
   User: any = ['Super Admin', 'Author', 'Reader'];
 
   constructor() { }

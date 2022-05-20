@@ -7,12 +7,12 @@ import { RegisterComponent } from './usuarios/components/register/register.compo
 
 const routes: Routes = [
 
- /*{ path: 'login',
+ { path: 'login',
    component: LoginComponent ,
    pathMatch: "full"
-  },*/
+  },
     {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     loadChildren: () => import('./usuarios/usuarios.module').then(m =>m.UsuariosModule),
     //pathMatch: "full"
@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: '**',
     //component: ErrorPageComponent
-    redirectTo: '404'
+    redirectTo: 'login'
   }
 ];
 

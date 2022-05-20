@@ -14,10 +14,10 @@ const routes: Routes = [
     component: HomeComponent,
     children:
       [
-        {
+       /* {
           path: 'login',
          component: LoginComponent ,
-        },
+        },*/
         {
           path: 'listado',
           component: TableComponent
