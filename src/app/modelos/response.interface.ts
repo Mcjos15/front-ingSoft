@@ -1,7 +1,10 @@
-export interface ResponseI{
+import { User } from "../usuarios/interfaces/users.interface";
+import { Authentication } from "./authentication.interface";
 
-user: string;
-aethentication:string;
-img:string;
+export interface ResponseI {
+
+  user: User;
+  authentication: Authentication;
+  img: string;
 
 }
