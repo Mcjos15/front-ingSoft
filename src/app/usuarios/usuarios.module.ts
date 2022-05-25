@@ -8,7 +8,7 @@ import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { QRCodeModule } from 'angularx-qrcode';
+
 
 
 
@@ -24,8 +24,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     UsuariosRoutingModule,
     MaterialModule,
     DataTablesModule,
-    FlexLayoutModule,
-    QRCodeModule
+    FlexLayoutModule
   ]
 })
 export class UsuariosModule { }
