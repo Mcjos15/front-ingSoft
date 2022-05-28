@@ -9,14 +9,16 @@ import { MaterialModule } from '../material/material.module';
 import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
+import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from '../servicios/token-interceptor.service';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     MensajesComponent,
-   TableComponent,
+    TableComponent,
     UsuarioComponent
   ],
   imports: [
@@ -25,6 +27,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     DataTablesModule,
     FlexLayoutModule
+  ],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
   ]
 })
 export class UsuariosModule { }

@@ -6,5 +6,7 @@ export interface ResponseI {
   user: User;
   authentication: Authentication;
   img: string;
+  //este token aca es temporal
+  token:string
 
 }

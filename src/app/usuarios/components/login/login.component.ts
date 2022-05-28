@@ -6,6 +6,7 @@ import { ApiService } from '../../../servicios/api.service';
 import { LoginI } from '../../../modelos/login.interface';
 import { LoginService } from 'src/app/servicios/login.service';
 import { Authentication } from '../../../modelos/authentication.interface';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,10 +22,15 @@ export class LoginComponent implements OnInit {
     cedula: '',
     id_sexo: ''
   };
+  logIn: LoginI = {
+    cedula: '',
+    password: ''
+  }
   auth: Authentication = {
     ascii: '',
     otpauth_url: 'string',
-    token: 'string'
+    token: 'string',
+    logIn: this.logIn
   }
   public myAngularxQrCode: string = '';
 
@@ -45,7 +51,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private userService: UserService, private api: ApiService
-    , private loginService: LoginService) {
+    , private loginService: LoginService,private router: Router) {
+
   }
 
   ngOnInit(): void {
@@ -66,12 +73,18 @@ export class LoginComponent implements OnInit {
 
     this.api.loginByCed(form).subscribe(data => {
       if (data.user) {
+        this.logIn.cedula = form.cedula;
+        this.logIn.password = form.password;
         this.user = data.user;
 
         this.auth.ascii = data.authentication.ascii;
         this.myAngularxQrCode = data.img;
         //this.myAngularxQrCode = data.authentication.otpauth_url;
-        console.log(data);
+        console.log(data.token);
+        //esto lo tenenemos que guardar en el metodo de "sendToken", lo hacemos aca porque
+        //la doble autenticascion nos quita demasiado tiempo, entonces de momento la anulamos.
+        localStorage.setItem('token',data.token);
+        this.router.navigate(['home']);
       }
     })
 

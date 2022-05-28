@@ -23,7 +23,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     RegisterComponent,
     LoginComponent,
     FooterComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-   
+
   ],
   providers: [],
   bootstrap: [AppComponent],

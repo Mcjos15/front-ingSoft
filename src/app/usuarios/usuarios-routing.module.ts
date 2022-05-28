@@ -5,22 +5,24 @@ import { TableComponent } from './pages/table/table.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { LoginComponent } from './components/login/login.component';
+import { RoleGuard } from '../guards/role.guard';
 
 const routes: Routes = [
- 
+
   {// ver esto
     //ruta padre
     path: '',
     component: HomeComponent,
     children:
       [
-       /* {
-          path: 'login',
-         component: LoginComponent ,
-        },*/
+        /* {
+           path: 'login',
+          component: LoginComponent ,
+         },*/
         {
           path: 'listado',
-          component: TableComponent
+          component: TableComponent, canActivate:[RoleGuard],
+          data: { expectedRole: 'sa' }
 
         }
         ,
@@ -29,7 +31,7 @@ const routes: Routes = [
           component: MensajesComponent
         },
         {
-          path:'listar',
+          path: 'listar',
           component: TableComponent
         },
         {
@@ -47,7 +49,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes)
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })

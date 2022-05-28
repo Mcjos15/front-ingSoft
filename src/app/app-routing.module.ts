@@ -4,6 +4,7 @@ import { HomeComponent } from './usuarios/pages/home/home.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { LoginComponent } from './usuarios/components/login/login.component';
 import { RegisterComponent } from './usuarios/components/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 
@@ -15,6 +16,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     loadChildren: () => import('./usuarios/usuarios.module').then(m =>m.UsuariosModule),
+    canActivate:[AuthGuard]
     //pathMatch: "full"
   },
 
