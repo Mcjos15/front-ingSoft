@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class TokenInterceptorService implements HttpInterceptor {
 
   constructor() { }
-  intercept(req:any, next:any) {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
     const tokenHeader = req.clone({
       setHeaders: {
@@ -16,5 +16,8 @@ export class TokenInterceptorService implements HttpInterceptor {
       }
     });
     return next.handle(tokenHeader);
+  }
+  signOut(): void {
+    window.sessionStorage.clear();
   }
 }

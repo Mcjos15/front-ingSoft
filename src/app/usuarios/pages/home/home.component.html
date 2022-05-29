@@ -19,11 +19,10 @@
                 <mat-icon mat-list-icon>receipt_long</mat-icon>
                 <span>Listado de usuarios</span>
             </a>
-            <a routerLink="./listar" mat-list-item (click)="sidenav.toggle()">
+            <a routerLink="./" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>receipt_long</mat-icon>
-                <span>Lista de usuarios</span>
+                <span>Home</span>
             </a>
-
             <a routerLink="./mensajes" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>question_answer</mat-icon>
                 <span>Ver mensajes</span>
@@ -37,17 +36,15 @@
                 menu
             </mat-icon>
         </button>
-<!-- ver aqui el log out-->
+        <!-- ver aqui el log out-->
         <span class="spacer">
             <!--Se movio gracias al spacer-->
         </span>
-        <button routerLink="./login" mat-button>
+        <button routerLink="./login" (click)="singout()" mat-button>
             <mat-icon mat-list-icon>logout</mat-icon>
 
         </button>
     </mat-toolbar>
-
-
     <!--Activo las rutas definidas en el routermodule-->
     <div class="container">
 

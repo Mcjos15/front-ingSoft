@@ -8,11 +8,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { HttpClientModule, } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { LoginComponent } from './usuarios/components/login/login.component';
 import { RegisterComponent } from './usuarios/components/register/register.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { TokenInterceptorService } from './servicios/token-interceptor.service';
 
 
 
@@ -37,7 +38,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     ReactiveFormsModule,
 
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
