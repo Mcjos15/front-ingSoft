@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { UserService } from '../../services/user.service';
-import {Router } from '@angular/router';
+import {ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../interfaces/users.interface';
 declare var $: any;
 @Component({
@@ -18,7 +18,7 @@ export class TableComponent implements OnInit, OnDestroy {
   posts!: any;
 
   constructor(private userService: UserService,
-    private _router:Router) { }
+    private _router:Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -41,10 +41,12 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 // revisar si el formato de editar/:id esta correcto
   editarButtonClick(id_usuario:User){
-this._router.navigate(['/editar/',id_usuario]);
+
+    console.log( {relativeTo: this.route});
+this._router.navigate(['../editar',id_usuario],{ relativeTo: this.route });
 
 
-  } 
+  }
 
 
 }
@@ -53,10 +55,3 @@ this._router.navigate(['/editar/',id_usuario]);
 
 
 
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}

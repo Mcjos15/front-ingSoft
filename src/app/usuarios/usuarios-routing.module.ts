@@ -28,7 +28,7 @@ const routes: Routes = [
         }
         ,
         {
-          path: 'editar/id',
+          path: 'editar/:id',
           component: EditarComponent,
          // data: { expectedRole: 'sa' }
 

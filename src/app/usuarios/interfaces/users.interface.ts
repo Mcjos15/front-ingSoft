@@ -13,4 +13,5 @@ export interface User {
   id_distrito?: number;
   id_canton?: number;
   id_provincia?: number;
+  password?:string
 }

@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
 
   search() {
     if (this.user) {
-      this.userService.getUserById(this.user)
+      this.userService.getUserByCedula(this.user)
         .subscribe(data => this.user = data);
       console.log(this.user);
     }
@@ -83,8 +83,8 @@ export class LoginComponent implements OnInit {
         console.log(data.token);
         //esto lo tenenemos que guardar en el metodo de "sendToken", lo hacemos aca porque
         //la doble autenticascion nos quita demasiado tiempo, entonces de momento la anulamos.
-        //localStorage.setItem('token',data.token);
-        //this.router.navigate(['home']);
+        localStorage.setItem('token',data.token);
+        this.router.navigate(['home']);
       }
     })
 
@@ -95,7 +95,6 @@ export class LoginComponent implements OnInit {
     if (token.length !== 0) {
       this.auth.token = token;
       this.loginService.set2Authentication(this.auth).subscribe(data => {
-        console.log(data);
 
         localStorage.setItem('token',data.token);
         this.router.navigate(['home']);
