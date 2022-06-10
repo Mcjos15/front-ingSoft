@@ -8,6 +8,7 @@ import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TableDepaComponent } from './pages/table-depa/table-depa.component';
 
 import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 
@@ -18,7 +19,8 @@ import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
     HomeComponent,
     MensajesComponent,
     TableComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    TableDepaComponent
   ],
   imports: [
     CommonModule,
