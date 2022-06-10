@@ -5,6 +5,7 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { LoginComponent } from './usuarios/components/login/login.component';
 import { RegisterComponent } from './usuarios/components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
+import { EditarComponent } from './usuarios/editar/editar.component';
 
 const routes: Routes = [
 
@@ -24,6 +25,9 @@ const routes: Routes = [
    component: RegisterComponent,
    pathMatch: "full"
  },
+/*{path: 'editar/id',
+ component: EditarComponent
+},*/
   {
     path: '404',
     component: ErrorPageComponent

@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { LoginComponent } from './components/login/login.component';
 import { RoleGuard } from '../guards/role.guard';
+import { EditarComponent } from './editar/editar.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,13 @@ const routes: Routes = [
           path: 'listado',
           component: TableComponent, canActivate:[RoleGuard],
           data: { expectedRole: 'sa' }
+
+        }
+        ,
+        {
+          path: 'editar/id',
+          component: EditarComponent,
+         // data: { expectedRole: 'sa' }
 
         }
         ,

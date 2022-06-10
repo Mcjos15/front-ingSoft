@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { UserService } from '../../services/user.service';
+import {Router } from '@angular/router';
+import { User } from '../../interfaces/users.interface';
 declare var $: any;
 @Component({
   selector: 'app-listar',
@@ -15,7 +17,8 @@ export class TableComponent implements OnInit, OnDestroy {
   dtTrigger: Subject<any> = new Subject<any>();
   posts!: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private _router:Router) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -36,6 +39,12 @@ export class TableComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
+// revisar si el formato de editar/:id esta correcto
+  editarButtonClick(id_usuario:User){
+this._router.navigate(['/editar/',id_usuario]);
+
+
+  } 
 
 
 }
