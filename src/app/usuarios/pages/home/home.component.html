@@ -27,6 +27,12 @@
                 <mat-icon mat-list-icon>receipt_long</mat-icon>
                 <span>Home</span>
             </a>
+            <a routerLink="./departamento" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>receipt_long</mat-icon>
+                <span>Listado de Departamentos</span>
+            </a>
+
+
             <a routerLink="./mensajes" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>question_answer</mat-icon>
                 <span>Ver mensajes</span>
@@ -36,6 +42,8 @@
                 <mat-icon mat-list-icon>question_answer</mat-icon>
                 <span>Editar</span>
             </a>
+
+
 
 
         </mat-nav-list>

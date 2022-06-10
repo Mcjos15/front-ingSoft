@@ -7,6 +7,7 @@ import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { LoginComponent } from './components/login/login.component';
 import { RoleGuard } from '../guards/role.guard';
 import { EditarComponent } from './editar/editar.component';
+import { TableDepaComponent } from './pages/table-depa/table-depa.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,13 @@ const routes: Routes = [
           path: 'editar/id',
           component: EditarComponent,
          // data: { expectedRole: 'sa' }
+
+        }
+        ,
+        {
+          path: 'departamento',
+          component: TableDepaComponent,
+          //data: { expectedRole: 'sa' }
 
         }
         ,
