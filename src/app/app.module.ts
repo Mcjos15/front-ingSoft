@@ -16,6 +16,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { TokenInterceptorService } from './servicios/token-interceptor.service';
 import { EditarComponent } from './usuarios/editar/editar.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { CreateDepaComponent } from './usuarios/create-depa/create-depa.component';
 //import { TableDepaComponent } from './usuarios/pages/table-depa/table-depa.component';
 
 
@@ -29,6 +30,7 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
     FooterComponent,
     EditarComponent,
     CrearUsuarioComponent,
+    CreateDepaComponent,
     //TableDepaComponent,
 
   ],

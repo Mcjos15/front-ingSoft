@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import { DepaService } from '../../services/depa.service';
-import {Router } from '@angular/router';
+import {Router,ActivatedRoute } from '@angular/router';
 import { User } from '../../interfaces/users.interface';
 import {Depa} from '../../interfaces/dep.interface';
 import { post } from 'jquery';
+
 
 declare var $: any;
 @Component({
@@ -22,7 +23,7 @@ export class TableDepaComponent implements OnInit, OnDestroy {
   posts!: any;
 
   constructor(private depaService: DepaService,
-    private _router:Router) { }
+    private _router:Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -45,9 +46,18 @@ export class TableDepaComponent implements OnInit, OnDestroy {
     this.dtTrigger.unsubscribe();
   }
 // revisar si el formato de editar/:id esta correcto
-  editarButtonClick(id_departamento:Depa){
-this._router.navigate(['/editar/',id_departamento]);
+editarDButtonClick(id_departamento:Depa){
 
-  } 
+  console.log( {relativeTo: this.route});
+this._router.navigate(['../editar',id_departamento],{ relativeTo: this.route });
+
+
+}
+agregarDButtonClick(){
+this._router.navigate(['../agregarDep'],{relativeTo:this.route});
+
+}
+
+
 
 }

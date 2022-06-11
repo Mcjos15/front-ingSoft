@@ -11,6 +11,7 @@
                         <th>id_Canton</th>
                         <th>id_Provincia</th>
                         <th>id_pais</th>
+                        <th><button mat-raised-button color="primary" (click)="agregarDButtonClick()">Agregar</button></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,7 +22,7 @@
                         <td>{{ post.id_canton }}</td>
                         <td>{{ post.id_provincia }}</td>
                         <td>{{ post.id_pais }}</td>
-                        <td><button mat-button color="info" (click)="editarButtonClick(post.id_departamento)" >
+                        <td><button mat-raised-button color="primary" (click)="editarDButtonClick(post.id_departamento)" >
                       Editar
                   </button></td>
                     </tr>

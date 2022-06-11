@@ -19,6 +19,9 @@ export class DepaService {
     return this.http.get<Depa[]>(`${this.baseURL}/departamento`);
   }
 
+  postDepa(depa:Depa): Observable<Depa> {
+    return this.http.post<Depa>(`${this.baseURL}/departamento`, depa);
+  }
 
 
   getDepaById(depa:Depa): Observable<Depa> {

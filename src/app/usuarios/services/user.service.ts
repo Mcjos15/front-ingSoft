@@ -19,12 +19,17 @@ export class UserService {
     return this.http.get<User[]>(`${this.baseURL}/users`);
   }
 
+
+  
   getUserByCedula(user:User): Observable<User> {
     return this.http.post<User>(`${this.baseURL}/users`, user);
   }
   getUserById(user:User): Observable<User> {
     return this.http.post<User>(`${this.baseURL}/users/search`, user);
   }
+
+
+
   editUser(user:User): Observable<User>{
     return this.http.post<User>(`${this.baseURL}/users/edit`, user);
   }

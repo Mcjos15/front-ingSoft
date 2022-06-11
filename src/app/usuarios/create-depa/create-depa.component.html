@@ -1,0 +1,13 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <form role="form" (ngSubmit)="subirDButtonClick()" class="decor" >
+        <div class="form-left-decoration"></div>
+        <div class="form-right-decoration"></div>
+        <div class="circle"></div>
+        <div class="form-inner">
+          <h1>Descripcion</h1>
+        
+          <input type="text" placeholder="Message..." [(ngModel)]="departamento.descripcion" id="descripcion" name="descripcion" rows="5">
+          <button type="submit" >Submit</button>
+        </div>
+
+      </form>

@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RoleGuard } from '../guards/role.guard';
 import { EditarComponent } from './editar/editar.component';
 import { TableDepaComponent } from './pages/table-depa/table-depa.component';
+import { CreateDepaComponent } from './create-depa/create-depa.component';
 
 const routes: Routes = [
 
@@ -38,6 +39,13 @@ const routes: Routes = [
         {
           path: 'departamento',
           component: TableDepaComponent,
+          //data: { expectedRole: 'sa' }
+
+        }
+        ,
+        {
+          path: 'agregarDep',
+          component: CreateDepaComponent,
           //data: { expectedRole: 'sa' }
 
         }
