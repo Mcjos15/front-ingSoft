@@ -7,8 +7,12 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Peso</th>
-                        <th>Simbolo</th>
+                        <th>Primer apellido</th>
+                        <th>Segundo apellido</th>
+                        <th>Sexo</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -16,9 +20,20 @@
                         <td>{{ post.id_usuario }}</td>
                         <td>{{ post.nombre }}</td>
                         <td>{{ post.primer_apellido }}</td>
+                        <td>{{ post.segundo_apellido }}</td>
+                        <td *ngIf="post.id_sexo==1">Masculino</td>
+                        <td *ngIf="post.id_sexo==2">Femenino</td>
+                        <td>{{ post.active }}</td>
                         <td><button mat-button color="info" (click)="editarButtonClick(post.id_usuario)" >
+
+
                       Editar
                   </button></td>
+                  <td><button mat-button color="info" (click)="deleteButtonClick(post.id_usuario)" >
+
+
+                    Eliminar
+                </button></td>
                     </tr>
                 </tbody>
             </table>

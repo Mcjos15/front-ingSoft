@@ -11,6 +11,8 @@ import { UserService } from '../services/user.service';
 })
 export class EditarComponent implements OnInit {
 
+  sexo = '1';
+  active='1';
   persona:User ={
     cedula:'',
     id_usuario: 0,
@@ -18,7 +20,8 @@ export class EditarComponent implements OnInit {
   primer_apellido: '',
   segundo_apellido: '',
   id_sexo: '',
-  password:''
+  password:'',
+  active:''
   }
 
   EditForm = new FormGroup({
@@ -31,12 +34,10 @@ export class EditarComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-        console.log(params['id']);
         this.persona.id_usuario = params['id'];
         this.userService.getUserById(this.persona).subscribe((res:any) => {
           this.persona = res.user;
-          console.log(res);
-          console.log(this.persona.cedula);
+
     });
       });
     }
@@ -48,6 +49,9 @@ export class EditarComponent implements OnInit {
       this.persona.segundo_apellido = form.segundo_apellido;
       this.persona.password = form.password;
       this.persona.id_sexo = form.id_sexo;*/
+
+      this.persona.id_sexo = this.sexo;
+      this.persona.active = this.active;
 
       this.userService.editUser(this.persona).subscribe(() =>  this.router.navigate(['home/listar']));
 

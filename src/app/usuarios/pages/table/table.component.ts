@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import {ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { User } from '../../interfaces/users.interface';
 declare var $: any;
 @Component({
@@ -17,8 +18,20 @@ export class TableComponent implements OnInit, OnDestroy {
   dtTrigger: Subject<any> = new Subject<any>();
   posts!: any;
 
+
+  persona:User ={
+    cedula:'',
+    id_usuario: 0,
+  nombre: '',
+  primer_apellido: '',
+  segundo_apellido: '',
+  id_sexo: '',
+  password:'',
+  active :''
+  }
+
   constructor(private userService: UserService,
-    private _router:Router,private route: ActivatedRoute) { }
+    private _router:Router,private route: ActivatedRoute,public _location: Location) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -30,6 +43,8 @@ export class TableComponent implements OnInit, OnDestroy {
 
     this.userService.getUsers()
       .subscribe((posts:any) => {
+
+        console.log(posts['data']);
         this.posts = posts['data'];
 
         this.dtTrigger.next(void 0);
@@ -42,11 +57,28 @@ export class TableComponent implements OnInit, OnDestroy {
 // revisar si el formato de editar/:id esta correcto
   editarButtonClick(id_usuario:User){
 
-    console.log( {relativeTo: this.route});
 this._router.navigate(['../editar',id_usuario],{ relativeTo: this.route });
 
 
   }
+
+  deleteButtonClick(id_usuario:number){
+
+    this.persona.id_usuario = id_usuario;
+
+   this.userService.deleteUser(this.persona)
+   .subscribe((res:any)=>{
+
+    this._router.navigateByUrl("/listar", { skipLocationChange: true }).then(() => {
+      console.log(decodeURI(this._location.path()));
+      this._router.navigate([decodeURI(this._location.path())]);
+      });
+    console.log(res);
+
+   });
+
+
+      }
 
 
 }

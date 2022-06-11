@@ -26,7 +26,11 @@ export class UserService {
     return this.http.post<User>(`${this.baseURL}/users/search`, user);
   }
   editUser(user:User): Observable<User>{
-    return this.http.post<User>(`${this.baseURL}/users/edit`, user);
+    return this.http.put<User>(`${this.baseURL}/users`, user);
+  }
+
+  deleteUser(user:User): Observable<User>{
+    return this.http.post<User>(`${this.baseURL}/users/delete`, user);
   }
 
 
