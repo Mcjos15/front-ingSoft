@@ -12,8 +12,24 @@
 	<label for="password">Contraseña </label>
 	<input type ="text" [(ngModel)]="persona.password" name="password" id="password" placeholder="Contraseña"/>
 
-	<label for="id_sexo">Sexo</label>
-	<input type="text" [(ngModel)]="persona.id_sexo" name="id_sexo" for="id_sexo" placeholder="1 Para Femenino,2 Para masculino" >
+	 <mat-form-field appearance="fill">
+    <mat-label>Sexo</mat-label>
+    <mat-select [(value)]="sexo">
+      <mat-option value="1">Masculino</mat-option>
+      <mat-option value="2">Femenino</mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Estado</mat-label>
+    <mat-select [(value)]="active">
+      <mat-option value="1">Activo</mat-option>
+      <mat-option value="0">Inactivo</mat-option>
+    </mat-select>
+  </mat-form-field>
 
 	<input type="submit" name="enviar" value="Actualizar Datos"/>
 </form>
