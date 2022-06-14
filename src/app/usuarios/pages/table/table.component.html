@@ -24,12 +24,12 @@
                         <td *ngIf="post.id_sexo==1">Masculino</td>
                         <td *ngIf="post.id_sexo==2">Femenino</td>
                         <td>{{ post.active }}</td>
-                        <td><button mat-button color="info" (click)="editarButtonClick(post.id_usuario)" >
+                        <td><button mat-raised-button color="primary" (click)="editarButtonClick(post.id_usuario)" >
 
 
                       Editar
                   </button></td>
-                  <td><button mat-button color="info" (click)="deleteButtonClick(post.id_usuario)" >
+                  <td><button mat-raised-button color="warn" (click)="deleteButtonClick(post.id_usuario)" >
 
 
                     Eliminar
