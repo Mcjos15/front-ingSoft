@@ -11,8 +11,8 @@ import { UserService } from '../services/user.service';
 })
 export class EditarComponent implements OnInit {
 
-  sexo = '1';
-  active='1';
+  sexo:string ='';
+  active:string = '';
   persona:User ={
     cedula:'',
     id_usuario: 0,
@@ -38,6 +38,18 @@ export class EditarComponent implements OnInit {
         this.userService.getUserById(this.persona).subscribe((res:any) => {
           this.persona = res.user;
 
+
+          console.log(this.persona.active);
+          if(this.persona.active != null){
+            this.active = '1';
+          }else{
+            this.active ='0';
+          }
+
+
+          this.sexo = this.persona.id_sexo!;
+
+
     });
       });
     }
@@ -52,6 +64,8 @@ export class EditarComponent implements OnInit {
 
       this.persona.id_sexo = this.sexo;
       this.persona.active = this.active;
+
+      console.log(this.persona.active);
 
       this.userService.editUser(this.persona).subscribe(() =>  this.router.navigate(['home/listar']));
 
