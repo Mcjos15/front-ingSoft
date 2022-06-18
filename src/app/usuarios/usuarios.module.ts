@@ -9,6 +9,9 @@ import { MaterialModule } from '../material/material.module';
 import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TableDepaComponent } from './pages/table-depa/table-depa.component';
+import {FormsModule} from '@angular/forms';
+
+
 
 import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 
@@ -27,7 +30,8 @@ import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
     UsuariosRoutingModule,
     MaterialModule,
     DataTablesModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
