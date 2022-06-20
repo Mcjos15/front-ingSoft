@@ -202,7 +202,19 @@ textarea {
     bottom: 10px;
 }
 
+<<<<<<< Updated upstream
 .chat-main-box .chat-right-aside .send-chat-box .custom-send .cst-icon {
     color: #67757c;
     margin-right: 10px;
 }
+=======
+.main-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+	padding: 0.8375em 0;
+}*/
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+/*kekw*/ 
+>>>>>>> Stashed changes

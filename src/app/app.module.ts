@@ -19,6 +19,7 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
 import { CreateDepaComponent } from './usuarios/create-depa/create-depa.component';
 //import { TableDepaComponent } from './usuarios/pages/table-depa/table-depa.component';
 import { SocketIoModule,SocketIoConfig } from 'ngx-socket-io';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 
@@ -43,6 +44,7 @@ const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    AlifeFileToBase64Module,
 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],

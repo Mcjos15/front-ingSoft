@@ -14,6 +14,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 
 
 import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 
 
@@ -32,7 +33,8 @@ import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
     MaterialModule,
     DataTablesModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    AlifeFileToBase64Module
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
