@@ -10,7 +10,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TableDepaComponent } from './pages/table-depa/table-depa.component';
 import {FormsModule} from '@angular/forms';
-
+import { FooterComponent } from '../shared/footer/footer.component';
 
 
 import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
@@ -23,7 +23,8 @@ import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
     MensajesComponent,
     TableComponent,
     UsuarioComponent,
-    TableDepaComponent
+    TableDepaComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

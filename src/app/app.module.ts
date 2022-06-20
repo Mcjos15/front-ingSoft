@@ -12,7 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS, } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { LoginComponent } from './usuarios/components/login/login.component';
 import { RegisterComponent } from './usuarios/components/register/register.component';
-import { FooterComponent } from './shared/footer/footer.component';
+
 import { TokenInterceptorService } from './servicios/token-interceptor.service';
 import { EditarComponent } from './usuarios/editar/editar.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
@@ -27,7 +27,6 @@ const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    FooterComponent,
     EditarComponent,
     CrearUsuarioComponent,
     CreateDepaComponent,

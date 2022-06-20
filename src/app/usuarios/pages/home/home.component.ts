@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   singout(){
-    localStorage.removeItem('token');
+    localStorage.clear();
+    sessionStorage.clear();
   }
 }

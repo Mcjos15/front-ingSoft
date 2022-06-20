@@ -77,6 +77,10 @@ export class LoginComponent implements OnInit {
         this.logIn.password = form.password;
         this.user = data.user;
 
+        sessionStorage.setItem('user',this.user.nombre);
+        sessionStorage.setItem('cedula',this.user.cedula);
+        localStorage.setItem('user',this.user.nombre);
+        localStorage.setItem('cedula',this.user.cedula);
         this.auth.ascii = data.authentication.ascii;
         this.myAngularxQrCode = data.img;
         //this.myAngularxQrCode = data.authentication.otpauth_url;

@@ -1,94 +1,93 @@
+<!-- ============================================================== -->
+<!-- Main wrapper -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
 
     <!-- ============================================================== -->
-    <!-- Main wrapper -->
+    <!-- Page wrapper  -->
     <!-- ============================================================== -->
-    <div id="main-wrapper">
+    <div class="page-wrapper">
 
         <!-- ============================================================== -->
-        <!-- Page wrapper  -->
+        <!-- Container fluid  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div class="container-fluid">
+
 
             <!-- ============================================================== -->
-            <!-- Container fluid  -->
+            <!-- Start Page Content -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
+            <div class="row animated fadeIn">
+                <div class="col-12">
+                    <div class="card m-b-0">
+                        <!-- .chat-row -->
+                        <div class="chat-main-box">
+                            <!-- .chat-left-panel -->
+                            <div class="chat-left-aside">
+                                <div class="open-panel"><i class="ti-angle-right"></i></div>
+                                <div class="chat-left-inner">
 
-
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <div class="row animated fadeIn">
-                    <div class="col-12">
-                        <div class="card m-b-0">
-                            <!-- .chat-row -->
-                            <div class="chat-main-box">
-                                <!-- .chat-left-panel -->
-                                <div class="chat-left-aside">
-                                    <div class="open-panel"><i class="ti-angle-right"></i></div>
-                                    <div class="chat-left-inner">
-
-                                        <ul class="chatonline style-none" id="divUsuarios"> </ul>
+                                    <ul class="chatonline style-none" id="divUsuarios"> </ul>
+                                </div>
+                            </div>
+                            <div class="chat-right-aside">
+                                <div class="chat-main-header">
+                                    <div class="p-20 b-b">
+                                        <h3 class="box-title">Sala de chat <small>Consultas</small></h3>
                                     </div>
                                 </div>
-                                <div class="chat-right-aside">
-                                    <div class="chat-main-header">
-                                        <div class="p-20 b-b">
-                                            <h3 class="box-title">Sala de chat <small>Consultas</small></h3>
-                                        </div>
-                                    </div>
 
-                                    <div class="chat-rbox">
-                                        <ul class="chat-list p-20" id="divChatbox">
-                                          <div *ngFor="let message of messageList">
+                                <div class="chat-rbox">
+                                    <ul class="chat-list p-20" id="divChatbox">
+                                        <div *ngFor="let message of messageList">
                                             <li>
                                                 {{message}}
                                             </li>
-                                          </div>
+                                        </div>
 
-                                        </ul>
-                                    </div>
-                                    <div class="card-body b-t">
-
-                                       <!-- <form id="formEnviar">-->
-                                            <div class="row">
-                                                <div class="col-8">
-                                                  <input type="text" [(ngModel)]="newMessage"id="txtMensaje" placeholder="Escribe tu mensaje aquí" class="form-control b-0" autofocus>
-                                                </div>
-                                                <div class="col-4 text-right">
-
-                                          <button (click)="sendMessage()"class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i>Send Message</button>
-                                                </div>
-                                            </div>
-                                       <!-- </form>-->
-
-                                    </div>
+                                    </ul>
                                 </div>
-                                <!-- .chat-right-panel -->
+                                <div class="card-body b-t">
+
+                                    <!-- <form id="formEnviar">-->
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <input type="text" [(ngModel)]="newMessage" id="txtMensaje" placeholder="Escribe tu mensaje aquí" class="form-control b-0" autofocus autocomplete="off">
+                                        </div>
+                                        <div class="col-4 text-right">
+
+                                            <button (click)="sendMessage()" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i>Send Message</button>
+                                        </div>
+                                    </div>
+                                    <!-- </form>-->
+
+                                </div>
                             </div>
-                            <!-- /.chat-row -->
+                            <!-- .chat-right-panel -->
                         </div>
+                        <!-- /.chat-row -->
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-
             </div>
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
+            <!-- End PAge Content -->
             <!-- ============================================================== -->
 
-            <!-- End footer -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+
+        <!-- End footer -->
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Wrapper -->
+    <!-- End Page wrapper  -->
     <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

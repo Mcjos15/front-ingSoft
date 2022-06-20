@@ -1,7 +1,3 @@
-
-
-
-
 <mat-sidenav-container fullscreen>
     <!--Esto es una referencia local-->
     <mat-sidenav #sidenav mode="push">
@@ -43,7 +39,7 @@
                 <span>Editar</span>
             </a>
 
-       
+
 
 
         </mat-nav-list>
@@ -67,43 +63,44 @@
     <!--Activo las rutas definidas en el routermodule-->
     <div class="container">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script>
-            $(document).ready(function(){
+            $(document).ready(function() {
                 $("#myModal").modal('show');
             });
         </script>
-<!-- Modal -->
-<div id="app" class="container py-2" >
-    <div>
-        <p>Bienvenido a la pagina Inicial , gracias por Utilizar nuestros servicios</p>
-    </div>
-    <div class="py-2">
-        <div class="modal" id="myModal" >
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- Modal -->
+        <div id="app" class="container py-2">
+            <div>
+                <p>Bienvenido a la pagina Inicial , gracias por Utilizar nuestros servicios</p>
+            </div>
+            <div class="py-2">
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 
 
         <router-outlet></router-outlet>
+
     </div>
+    <app-footer></app-footer>
+
 </mat-sidenav-container>
-
-
