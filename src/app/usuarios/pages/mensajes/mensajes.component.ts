@@ -15,18 +15,11 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
   templateUrl: './mensajes.component.html'
 
 })
-<<<<<<< Updated upstream
 export class MensajesComponent  implements OnInit,OnDestroy{
 //107700164
   newMessage: string ='';
   messageList: string[] = [];
   mensajeSubscription!:Subscription;
-
-=======
-export class MensajesComponent implements OnInit {
-//107700164
-  newMessage: string ='';
-  messageList: string[] = [];
   type='file';
   link:any;
   files: any;
@@ -34,7 +27,6 @@ export class MensajesComponent implements OnInit {
   arrayLink: Array<any> = [];
   dire:string="";
 newArray: any[]=[];
->>>>>>> Stashed changes
   constructor(private chatService: ChatService){
 
   }
