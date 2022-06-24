@@ -9,6 +9,7 @@ import { RoleGuard } from '../guards/role.guard';
 import { EditarComponent } from './editar/editar.component';
 import { TableDepaComponent } from './pages/table-depa/table-depa.component';
 import { CreateDepaComponent } from './create-depa/create-depa.component';
+import { SolicitudComponent } from './pages/solicitud/solicitud.component';
 
 const routes: Routes = [
 
@@ -39,6 +40,12 @@ const routes: Routes = [
         {
           path: 'departamento',
           component: TableDepaComponent,
+          //data: { expectedRole: 'sa' }
+
+        },
+        {
+          path: 'solicitud',
+          component: SolicitudComponent,
           //data: { expectedRole: 'sa' }
 
         }

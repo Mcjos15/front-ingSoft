@@ -45,6 +45,7 @@ newArray: any[]=[];
   ngOnInit(){
     this.mensajeSubscription = this.chatService.getNewMessage().subscribe((message: any) => {
       this.messageList.push(message);
+      this.chatService.createRoom(localStorage.getItem('cedula')!);
     })
   }
 
@@ -56,7 +57,7 @@ newArray: any[]=[];
 
     console.log(this.newMessage);
 
-    this.chatService.sendMessage(this.newMessage);
+    this.chatService.sendMessage(this.newMessage,localStorage.getItem('cedula')!);
     this.newMessage = '';
 
     console.log(this.messageList);

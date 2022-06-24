@@ -1,0 +1,40 @@
+<form role="form" (ngSubmit)="subirDButtonClick()" class="decor">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h1>Tema de la solicitud</h1>
+
+        <input type="text" placeholder="Message..." [(ngModel)]="solicitud.tema" id="tema" name="tema" rows="5">
+        <button type="submit">subir</button>
+    </div>
+
+</form>
+
+<div class="container">
+    <div class="card m-5 p-3">
+
+        <div class="card-body">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tema</th>
+                        <th>id_Distrito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let post of posts">
+                        <td>{{ post.id }}</td>
+                        <td>{{ post.tema }}</td>
+                        <td><button mat-raised-button color="warn">
+                  Entrar al chat
+              </button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>

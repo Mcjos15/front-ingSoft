@@ -14,15 +14,14 @@ export class ChatService {
   private user!: string;
   constructor() {
     this.socket = io('http://localhost:8080');
-    this.cargarStorage();
     this.checkStatus();
+    this.cargarStorage();
   }
 
 
   checkStatus() {
     this.socket.on('connect', () => {
       console.log('Conectado al servidor');
-
       this.socketStatus = true;
     });
 
@@ -31,11 +30,16 @@ export class ChatService {
       this.socketStatus = false;
     });
   }
-  public sendMessage(message: any) {
+
+  public createRoom(room:string){
+    this.emit('entrarChat', room);
+  }
+  public sendMessage(message: any,room:string) {
 
     const payload = {
       de: sessionStorage.getItem('user'),
-      cuerpo: message
+      cuerpo: message,
+      sala:room
     };
 
     this.socket.emit('message', payload);
@@ -105,24 +109,30 @@ reader.readAsDataURL(file);
 
   cargarStorage() {
     if (sessionStorage.getItem('user')) {
-      this.user = sessionStorage.getItem('user')!;
-      console.log(this.user);
-      this.loginWS(this.user);
+      this.user = sessionStorage.getItem('cedula')!;
+      console.log('Cargado');
+      const payload = {
+        nombre: this.user,
+        room: this.user
+      };
+      this.loginWS(payload);
     }
   }
 
-  loginWS(nombre: string) {
+  loginWS(data: any) {
+
+    return new Promise((resolve, reject) => {
+
+      this.emit('configurar-usuario', data, () => {
+
+        this.user = data.nombre;
 
 
-
-    this.emit('configurar-usuario', nombre, () => {
-
-      this.user = nombre;
-
-
+      });
     });
 
 
   }
+
 
 }

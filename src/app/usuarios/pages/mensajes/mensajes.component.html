@@ -40,6 +40,7 @@
                                 <div class="chat-rbox">
                                     <ul class="chat-list p-20" id="divChatbox">
                                         <div *ngFor="let message of messageList">
+<<<<<<< Updated upstream
 
                                             <li *ngIf="message.length<100">
                                                 
@@ -56,6 +57,12 @@
                                                 
                                                
                                               </li>
+=======
+                                            <small>
+                                                {{message}}
+                                              </small>
+                                            <hr>
+>>>>>>> Stashed changes
                                         </div>
 
                                     </ul>
@@ -68,8 +75,9 @@
                                             <input type="text" [(ngModel)]="newMessage" id="txtMensaje" placeholder="Escribe tu mensaje aquí" class="form-control b-0" autofocus autocomplete="off">
                                         </div>
                                         <div class="col-4 text-right">
-                                       <!-- <form id="formEnviar">-->
+                                            <!-- <form id="formEnviar">-->
                                             <div class="row">
+<<<<<<< Updated upstream
                                          
                                                 <div class="col-10">
                                                   <!-- <input type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)"  />  --> 
@@ -80,11 +88,19 @@
                                                     
                                                     <button (click)="sendMessage()" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i>Upload Image</button>
                                          
+=======
+
+                                                <div class="col-10">
+                                                    <input type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" />
+                                                </div>
+                                                <div class="col-4 text-right">
+
+                                                    <button (click)="onFileChanges($event)" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i>Upload Image</button>
+                                                    <button (click)="sendMessage()" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i>Send Message</button>
+>>>>>>> Stashed changes
                                                 </div>
                                             </div>
-                                       <!-- </form>-->
 
-                                            <button (click)="sendMessage()" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i>Send Message</button>
                                         </div>
                                     </div>
                                     <!-- </form>-->

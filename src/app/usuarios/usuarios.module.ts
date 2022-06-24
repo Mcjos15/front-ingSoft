@@ -15,6 +15,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 
 import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { SolicitudComponent } from './pages/solicitud/solicitud.component';
 
 
 
@@ -25,7 +26,8 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     TableComponent,
     UsuarioComponent,
     TableDepaComponent,
-    FooterComponent
+    FooterComponent,
+    SolicitudComponent
   ],
   imports: [
     CommonModule,
