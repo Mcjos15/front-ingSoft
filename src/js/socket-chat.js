@@ -47,6 +47,29 @@ socket.on('crearMensaje', function(mensaje) {
     scrollBottom();
 });
 
+//escuchar imagen info
+socket.on('addimage',function(from,base64image){
+    console.log('se supone volvio la imagen');
+    $('.mensajes')
+    .append(
+        $('<p>').append($('<b>').text(msg),'<a target="_blank" href="'+ base64image + '"> <img src="'+base64image+'"/> </a>'
+        )
+        );
+});
+
+$(function(){
+$("#imagefile").on('change',function(e){
+var file = e.originalEvent.target.files[0];
+var reader=new FileReader();
+reader.onload=function(evt){
+//enviar imagen resultante
+socket.emit('user image',evt.target.result);
+};
+reader.readAsDataURL(file);
+});
+});
+
+
 // Escuchar cambios de usuarios
 // cuando un usuario entra o sale del chat
 socket.on('listaPersona', function(personas) {

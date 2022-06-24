@@ -41,6 +41,34 @@ export class ChatService {
     this.socket.emit('message', payload);
   }
 
+public mandarImagen(message:any){
+  /*
+  this.socket.on('addimage',function(from,base64image){
+    console.log('se supone volvio la imagen');
+    $('.mensajes')
+    .append(
+        $('<p>').append($('<b>').text(msg),'<a target="_blank" href="'+ base64image + '"> <img src="'+base64image+'"/> </a>'
+        )
+        );
+});
+
+$(function(){
+$("#imagefile").on('change',function(e){
+var file = e.originalEvent.target.files[0];
+var reader=new FileReader();
+reader.onload=function(evt){
+//enviar imagen resultante
+this.socket.emit('user image',evt.target.result);
+};
+reader.readAsDataURL(file);
+});
+});
+
+*/
+
+}
+
+
   public getNewMessage = () => {
     this.socket.on('message', (message: any) => {
       this.message$.next(message);
@@ -52,6 +80,20 @@ export class ChatService {
   emit(evento: string, payload?: any, callback?: any) {
     this.socket.emit(evento, payload, callback);
   }
+
+
+/*
+  socket.on('addimage',function(from,base64image){
+    console.log('se supone volvio la imagen');
+    $('.mensajes')
+    .append(
+        $('<p>').append($('<b>').text(msg),'<a target="_blank" href="'+ base64image + '"> <img src="'+base64image+'"/> </a>'
+        )
+        );
+});
+
+*/
+
 
   /*getMessages(){
     return this.listen('mensaje-nuevo');
