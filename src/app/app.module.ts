@@ -19,7 +19,6 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
 import { CreateDepaComponent } from './usuarios/create-depa/create-depa.component';
 //import { TableDepaComponent } from './usuarios/pages/table-depa/table-depa.component';
 import { SocketIoModule,SocketIoConfig } from 'ngx-socket-io';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
