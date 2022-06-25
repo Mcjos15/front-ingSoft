@@ -70,64 +70,16 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script>
-            $(document).ready(function() {
-                $("#MyModal").modal('show');
+            $(document).ready(function () {
+                $("#modi").modal('show');
             });
         </script>
         <!-- Modal -->
- 
-        
-        <div class="modal " id="MyModal" role="dialog">
-            <div class="modal-dialog"> 
-              
-              <!-- Modal content-->
-              
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Edit User</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label for="uname">Username:</label>
-                    <input type="uname" class="form-control" id="uname" placeholder="Enter Your Username">
-                  </div>
-                  <div class="form-group">
-                    <label for="fname">First Name:</label>
-                    <input type="fname" class="form-control" id="fname" placeholder="Enter Your First Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="lname">Last Name:</label>
-                    <input type="lname" class="form-control" id="lname" placeholder="Enter Your Last Name">
-                  </div>
-                  <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> User Role <span class="caret"></span> </button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">User</a></li>
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">Manager</a></li>
-                    </ul>
-                  </div>
-                  <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enabled / Disable <span class="caret"></span> </button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">User</a></li>
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">Manager</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!--End Of  div for moda-body class  -->
-                
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-success" data-dismiss="modal">Update</button>
-                </div>
-              </div>
 
 
-  </div>
-</div>
-</div>
+      
+
+    </div>
 
 
 
@@ -135,10 +87,14 @@
 
 
 
-  
 
-        <router-outlet></router-outlet>
 
-    <app-footer></app-footer>
+
+
+    <router-outlet></router-outlet>
+
 
 </mat-sidenav-container>
+
+
+<app-footer></app-footer>
