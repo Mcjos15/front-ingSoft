@@ -54,7 +54,7 @@ newArray: any[]=[];
 
     console.log(this.newMessage);
 
-    this.chatService.sendMessage(this.newMessage,localStorage.getItem('cedula')!);
+    this.chatService.sendMessage(this.newMessage,'2Vacaciones');
     this.newMessage = '';
 
     console.log(this.messageList);
