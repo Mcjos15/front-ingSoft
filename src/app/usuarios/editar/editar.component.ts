@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../interfaces/users.interface';
 import { UserService } from '../services/user.service';
@@ -24,9 +24,9 @@ export class EditarComponent implements OnInit {
   active:''
   }
 
-  EditForm = new FormGroup({
-    cedula: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+  EditForm = new UntypedFormGroup({
+    cedula: new UntypedFormControl('', Validators.required),
+    password: new UntypedFormControl('', Validators.required)
 
   })
 

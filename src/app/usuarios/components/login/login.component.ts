@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/users.interface';
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms'
 import { ApiService } from '../../../servicios/api.service';
 import { LoginI } from '../../../modelos/login.interface';
 import { LoginService } from 'src/app/servicios/login.service';
@@ -38,13 +38,13 @@ export class LoginComponent implements OnInit {
   focus: any;
   focus1: any;
   // validators del log in
-  loginForm = new FormGroup({
-    cedula: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+  loginForm = new UntypedFormGroup({
+    cedula: new UntypedFormControl('', Validators.required),
+    password: new UntypedFormControl('', Validators.required)
 
   })
-  tokenForm = new FormGroup({
-    token: new FormControl('', Validators.required)
+  tokenForm = new UntypedFormGroup({
+    token: new UntypedFormControl('', Validators.required)
 
   })
 

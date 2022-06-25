@@ -11,10 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TableDepaComponent } from './pages/table-depa/table-depa.component';
 import {FormsModule} from '@angular/forms';
 import { FooterComponent } from '../shared/footer/footer.component';
-
-
 import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
-import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { SolicitudComponent } from './pages/solicitud/solicitud.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -36,7 +33,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DataTablesModule,
     FlexLayoutModule,
     FormsModule,
-    AlifeFileToBase64Module,
+
     NgbModule
     
   ],

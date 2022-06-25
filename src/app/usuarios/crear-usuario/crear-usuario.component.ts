@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, FormArray, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, AbstractControl, FormArray, FormControl } from '@angular/forms';
 //shared custom validators
 import { ActivatedRoute } from '@angular/router';
 //import { UserService } from '../services/user.service';
@@ -10,9 +10,9 @@ import { User } from '../interfaces/users.interface';
   styleUrls: ['./crear-usuario.component.css']
 })
 export class CrearUsuarioComponent implements OnInit {
-  usuarioForm: FormGroup | undefined;
+  usuarioForm: UntypedFormGroup | undefined;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
     private route: ActivatedRoute,
     /*private uService: UserService*/) { }
 
