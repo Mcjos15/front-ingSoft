@@ -6,6 +6,7 @@
         <div class="card-body">
             <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
                 <thead>
+                    <button class="btn btn-outline-primary mb-2 me-2" (click)="openLg(content)">Large modal</button>
                     <tr>
                         <th>ID</th>
                         <th>Tema</th>
@@ -45,7 +46,7 @@
           </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-light"  mat-raised-button color="primary" (click)="subirDButtonClick()" >Agregar</button>
+        <button type="button" class="btn btn-light"  mat-raised-button color="primary" (click)="subirDButtonClick()" (click)="modal.close('Close click')" >Agregar</button>
       <button type="button" class="btn btn-light" mat-raised-button color="warn" (click)="modal.close('Close click')">Close</button>
     </div>
   </ng-template>
@@ -55,4 +56,3 @@
 
 
 
-<button class="btn btn-outline-primary mb-2 me-2" (click)="openLg(content)">Large modal</button>
