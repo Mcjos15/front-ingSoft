@@ -93,7 +93,7 @@ console.log('dentro');
           console.log(this.bas);
         };
       };
-      this.chatService.sendMessage(this.bas);
+      this.chatService.sendMessage(this.bas,'');
       reader.readAsDataURL(fileInput.target.files[0]);
     }
 //bas=fileInput.files[0];
