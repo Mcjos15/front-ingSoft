@@ -81,6 +81,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('cedula',this.user.cedula);
         localStorage.setItem('user',this.user.nombre);
         localStorage.setItem('cedula',this.user.cedula);
+        localStorage.setItem('id',this.user.id_usuario!.toString());
         this.auth.ascii = data.authentication.ascii;
         this.myAngularxQrCode = data.img;
         //this.myAngularxQrCode = data.authentication.otpauth_url;

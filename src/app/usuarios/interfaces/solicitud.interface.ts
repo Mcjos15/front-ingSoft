@@ -1,6 +1,7 @@
 export interface Solicitud {
 
   id?:string,
+  id_user:string,
   asunto:string,
-  detalle:string
+  palabra:string
 }
