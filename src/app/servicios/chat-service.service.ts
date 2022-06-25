@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { io } from "socket.io-client";
+import { Solicitud } from '../usuarios/interfaces/solicitud.interface';
+import { HttpClient } from '@angular/common/http';
+import { Mensaje } from '../usuarios/interfaces/mensajes.interface';
 
 
 @Injectable({
@@ -11,8 +15,9 @@ export class ChatService {
   public message$: BehaviorSubject<string> = new BehaviorSubject('');
   public socketStatus = false;
   private socket: any;
+  private baseURL: string = environment.baseUrl;
   private user!: string;
-  constructor() {
+  constructor(private http: HttpClient) {
     this.socket = io('http://localhost:8080');
     this.checkStatus();
     this.cargarStorage();
@@ -43,6 +48,24 @@ export class ChatService {
     };
 
     this.socket.emit('message', payload);
+  }
+
+
+  postSolicitud(soli:Solicitud): Observable<Solicitud> {
+    return this.http.post<Solicitud>(`${this.baseURL}/solicitud`, soli);
+  }
+
+
+  getDepaById(soli:Solicitud): Observable<Solicitud> {
+    return this.http.post<Solicitud>(`${this.baseURL}/solicitud/get`, soli);
+  }
+  postMensaje(msn:Mensaje): Observable<Mensaje> {
+    return this.http.post<Mensaje>(`${this.baseURL}/solicitud/messageId`, msn);
+  }
+
+
+  getMensajeById(msn:Mensaje): Observable<Mensaje> {
+    return this.http.post<Mensaje>(`${this.baseURL}/solicitud/message`, msn);
   }
 
 public mandarImagen(message:any){

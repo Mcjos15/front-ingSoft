@@ -26,7 +26,8 @@ export class SolicitudComponent implements OnInit {
   posts!: any;
   solicitud:Solicitud ={
     id:'',
-    tema:''
+    asunto:'',
+    detalle:''
   }
   constructor() {
     this.dtOptions = {
