@@ -5,10 +5,7 @@ import { UserService } from '../../services/user.service';
 import {ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { User } from '../../interfaces/users.interface';
-import { DataTableDirective } from 'angular-datatables';
 import { ChatService } from 'src/app/servicios/chat-service.service';
-import { AlifeFileToBase64Module } from 'alife-file-to-base64';
-import { toBase64String } from '@angular/compiler/src/output/source_map';
 import {DomSanitizer,SafeHtml,SafeUrl,SafeStyle} from '@angular/platform-browser';
 
 
