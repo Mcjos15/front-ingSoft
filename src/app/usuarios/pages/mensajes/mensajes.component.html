@@ -42,20 +42,20 @@
                                         <div *ngFor="let message of messageList">
 
                                             <li *ngIf="message.length<100">
-                                                
+
                                                 {{message}}
-                                              
+
                                             </li>
                                             <li *ngIf="message.length>100">
-                                            
-                                                    <img src="{{test(message)}}">
-                                                    kek
-                                        
-                                              <!--  <img [src]="message"/> --> 
-                                           
-                                                
-                                               
-                                              </li>
+
+                                                <img src="{{test(message)}}">
+
+
+                                                <!--  <img [src]="message"/> -->
+
+
+
+                                            </li>
                                         </div>
 
                                     </ul>
@@ -70,16 +70,16 @@
                                         <div class="col-4 text-right">
                                             <!-- <form id="formEnviar">-->
                                             <div class="row">
-                                         
+
                                                 <div class="col-10">
-                                                  <!-- <input type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)"  />  --> 
-                                                  <input type="file" (change)="CreateBase64String($event)" class="fileInputProfile form-control"/>
-                                                  </div>
-                                                 
+                                                    <!-- <input type="file" alife-file-to-base64 (onFileChanged)="onFileChanges($event)"  />  -->
+                                                    <input type="file" (change)="CreateBase64String($event)" class="fileInputProfile form-control" />
+                                                </div>
+
                                                 <div class="col-4 text-right">
-                                                    
+
                                                     <button (click)="sendMessage()" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i>Send Message</button>
-                                         
+
                                                 </div>
                                             </div>
 
