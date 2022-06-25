@@ -21,7 +21,7 @@ export class MensajesComponent  implements OnInit,OnDestroy{
 //107700164
   newMessage: string ='';
   currVerifiedLoanOfficerPhoto:any;
-  
+
 
   messageList: string[] = [];
   mensajeSubscription!:Subscription;
@@ -77,7 +77,7 @@ console.log('dentro');
 
 
   CreateBase64String(fileInput: any) {
-  
+
     if (fileInput.target.files && fileInput.target.files[0]) {
       //var bas:string
       const reader = new FileReader();
@@ -86,7 +86,7 @@ console.log('dentro');
         image.src = e.target.result;
         image.onload = rs => {
           const imgBase64Path = e.target.result;
-         // this.cardImageBase64 = imgBase64Path;         
+         // this.cardImageBase64 = imgBase64Path;
       //    this.isImageSaved = true;
           console.log(imgBase64Path);
           this.bas=imgBase64Path;
@@ -102,7 +102,7 @@ console.log('dentro');
   }
 
 
-  
+
 
 
 
