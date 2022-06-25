@@ -1,11 +1,11 @@
-import { Component, Input,ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, Input,ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 import { Solicitud } from '../../interfaces/solicitud.interface';
 import { Subject } from 'rxjs';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 //import {} from;
 
@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
+content:any;
 
   @Input() name: any;
 
@@ -28,7 +29,7 @@ export class SolicitudComponent implements OnInit {
     id:'',
     tema:''
   }
-  constructor() {
+  constructor(private modalService: NgbModal) {
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
@@ -60,6 +61,8 @@ export class SolicitudComponent implements OnInit {
   }
   subirDButtonClick(){
   }
-
+  openLg(content: any) {
+    this.modalService.open(content, { size: 'lg' });
+  }
 
 }
