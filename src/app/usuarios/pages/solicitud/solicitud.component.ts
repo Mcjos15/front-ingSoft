@@ -4,7 +4,10 @@ import { Solicitud } from '../../interfaces/solicitud.interface';
 import { Subject } from 'rxjs';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+//import {} from;
 
 @Component({
   selector: 'app-solicitud',

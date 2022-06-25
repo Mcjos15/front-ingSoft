@@ -4634,7 +4634,7 @@ button.close {
   outline: 0;
 }
 
-.modal-backdrop {
+/*.modal-backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -4651,7 +4651,7 @@ button.close {
 .modal-backdrop.show {
   opacity: 0.5;
 }
-
+*/
 .modal-header {
   display: -ms-flexbox;
   display: flex;

@@ -16,7 +16,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { JwtHelperService, JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { SolicitudComponent } from './pages/solicitud/solicitud.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -36,7 +36,9 @@ import { SolicitudComponent } from './pages/solicitud/solicitud.component';
     DataTablesModule,
     FlexLayoutModule,
     FormsModule,
-    AlifeFileToBase64Module
+    AlifeFileToBase64Module,
+    NgbModule
+    
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
