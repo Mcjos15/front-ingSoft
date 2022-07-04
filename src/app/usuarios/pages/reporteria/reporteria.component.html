@@ -1,0 +1,49 @@
+
+
+
+ <!-- SOLO CON SELECT  -->
+ <!--
+<mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option>None</mat-option>
+      <mat-option value="option1"> <a href="http://www.google.com" >Href</a>  </mat-option>
+      <mat-option value="option2">Option 2</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>You selected: {{selected}}</p> 
+   -->
+
+  <!-- Con NG SELECT  -->
+  <!--   <label>Your first ng-select</label>
+  <ng-select [items]="cities"
+             bindLabel="name"
+             placeholder="Select city"
+             [(ngModel)]="selectedCity">
+  </ng-select>
+  <p>
+      Selected city: {{selectedCity | json}}
+  </p>   -->
+ 
+
+ 
+
+<div class="custom-class">
+  <button mat-menu-item 
+  [matMenuTriggerFor]="reporteri">Reporteria </button>
+<mat-menu #reporteri="matMenu" color="Primary">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzgyMDIyOTAtZDIwMS00ODE2LTg5NWQtMzlhMjFlYjNiZTE5IiwidCI6ImU3OTg0Y2FjLTI1NDMtNGY4OC04Zjk3LTk1MjQzMzVlNmJjNCIsImMiOjR9"  
+  target="_blank">
+   <button mat-menu-item>Sexo usuarios</button>
+</a>
+<a href="https://legal.fireflysemantics.com/terms-of-service/"
+target="_blank">
+   <button mat-menu-item>Terms of Service</button>
+</a>
+</mat-menu>
+
+</div>
+
+
+<iframe title="idsexo - Página 1" width="750" height="600" src="https://c.tenor.com/hldiGem8HtkAAAAd/monki-monkey.gif" frameborder="0" allowFullScreen="true"></iframe>

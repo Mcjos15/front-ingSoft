@@ -10,6 +10,7 @@ import { EditarComponent } from './editar/editar.component';
 import { TableDepaComponent } from './pages/table-depa/table-depa.component';
 import { CreateDepaComponent } from './create-depa/create-depa.component';
 import { SolicitudComponent } from './pages/solicitud/solicitud.component';
+import { ReporteriaComponent } from './pages/reporteria/reporteria.component';
 
 const routes: Routes = [
 
@@ -64,6 +65,10 @@ const routes: Routes = [
         {
           path: 'listar',
           component: TableComponent
+        },
+        {
+          path: 'reporteria',
+          component: ReporteriaComponent
         },
         {
           path: '**',
