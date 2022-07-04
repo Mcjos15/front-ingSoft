@@ -1,5 +1,7 @@
 export interface Mensaje {
 
-  id?:string,
-  asunto:string
+  id_solicitud?:string,
+  asunto:string,
+  de:string,
+  fecha?:any
 }

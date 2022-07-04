@@ -58,7 +58,7 @@ const routes: Routes = [
         }
         ,
         {
-          path: 'mensajes',
+          path: 'mensajes/:id',
           component: MensajesComponent
         },
         {

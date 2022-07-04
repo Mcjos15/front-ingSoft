@@ -7,7 +7,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ChatService } from '../../../servicios/chat-service.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 //import {} from;
 
@@ -33,7 +33,7 @@ export class SolicitudComponent implements OnInit {
     id_user: '',
     palabra: ''
   }
-  constructor(private modalService: NgbModal, private chatService: ChatService,private router: Router) {
+  constructor(private modalService: NgbModal, private chatService: ChatService,private router: Router,private route: ActivatedRoute) {
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
@@ -85,10 +85,11 @@ export class SolicitudComponent implements OnInit {
   openLg(content: any) {
     this.modalService.open(content, { size: 'lg' });
   }
-  entrarChat(room: string) {
-    console.log(room);
+  entrarChat(id: string,asunto:string) {
+    const room = id+'-'+asunto;
     this.chatService.createRoom(room);
-    this.router.navigate(['home/mensajes'])
+    this.router.navigate(['../mensajes',room],{ relativeTo: this.route });
+    //this.router.navigate(['home/mensajes'])
   }
 
 }
