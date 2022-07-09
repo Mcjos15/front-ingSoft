@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ChatService } from '../../../servicios/chat-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 //import {} from;
 
@@ -85,11 +86,25 @@ export class SolicitudComponent implements OnInit {
   openLg(content: any) {
     this.modalService.open(content, { size: 'lg' });
   }
+
+alertSucces(){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Bienvendio al Chat',
+    showConfirmButton: false,
+    timer: 1500
+  })
+
+
+}
+
   entrarChat(id: string,asunto:string) {
     const room = id+'-'+asunto;
     this.chatService.createRoom(room);
     this.router.navigate(['../mensajes',room],{ relativeTo: this.route });
     //this.router.navigate(['home/mensajes'])
+    this.alertSucces();
   }
 
 }

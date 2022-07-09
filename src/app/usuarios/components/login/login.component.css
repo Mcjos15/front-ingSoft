@@ -108,3 +108,12 @@ body {
 	padding: 0.8375em 0;
 }
 
+.my-validation-message::before {
+	display: none;
+  }
+  
+  .my-validation-message i {
+	margin: 0 .4em;
+	color: #f27474;
+	font-size: 1.4em;
+  }

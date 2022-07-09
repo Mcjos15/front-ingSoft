@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Depa } from '../interfaces/dep.interface';
 import { DepaService } from '../services/depa.service';
 
@@ -27,6 +28,23 @@ export class CreateDepaComponent implements OnInit {
 
   }
 
+  alertaSubmit(){
+    Swal.fire({
+      title: 'Se a Agregado Exitosamente.',
+      width: 600,
+      padding: '3em',
+      color: '#716add',
+      background: '#fff url(/images/trees.png)',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `
+    })
 
+
+
+  }
 
 }

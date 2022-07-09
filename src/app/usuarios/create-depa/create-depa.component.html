@@ -7,7 +7,7 @@
           <h1>Descripcion</h1>
         
           <input type="text" placeholder="Message..." [(ngModel)]="departamento.descripcion" id="descripcion" name="descripcion" rows="5">
-          <button type="submit" >Submit</button>
+          <button type="submit" (click)="alertaSubmit()" >Submit</button>
         </div>
 
       </form>

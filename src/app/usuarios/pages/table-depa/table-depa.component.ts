@@ -7,6 +7,7 @@ import {Router,ActivatedRoute } from '@angular/router';
 import { User } from '../../interfaces/users.interface';
 import {Depa} from '../../interfaces/dep.interface';
 import { post } from 'jquery';
+import Swal from 'sweetalert2';
 
 
 declare var $: any;
@@ -57,7 +58,16 @@ agregarDButtonClick(){
 this._router.navigate(['../agregarDep'],{relativeTo:this.route});
 
 }
+warnAlert(){
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Eliminado exitosamente!',
+  
+  })
 
+
+}
 
 
 }

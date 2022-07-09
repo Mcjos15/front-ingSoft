@@ -6,6 +6,7 @@ import {ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { User } from '../../interfaces/users.interface';
 import { DataTableDirective } from 'angular-datatables';
+import Swal from 'sweetalert2';
 declare var $: any;
 @Component({
   selector: 'app-listar',
@@ -95,9 +96,17 @@ this._router.navigate(['../editar',id_usuario],{ relativeTo: this.route });
    });
    this.reload();
 
-
+   this.warn();
       }
+warn(){
+  Swal.fire({
+    icon: 'error',
+    title: 'Eliminado',
+    text: 'El usuario se elimino correctamente!'
+   
+  })
 
+}
 
 }
 

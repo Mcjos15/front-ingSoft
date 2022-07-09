@@ -7,7 +7,7 @@ import { LoginI } from '../../../modelos/login.interface';
 import { LoginService } from 'src/app/servicios/login.service';
 import { Authentication } from '../../../modelos/authentication.interface';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';  
 
 @Component({
   selector: 'app-login',
@@ -59,7 +59,42 @@ export class LoginComponent implements OnInit {
 
   }
 
+  alertWithSuccess(){  
+    Swal.fire('Gracias...', 'Usted se Logeo exitosamente!', 'success')  
+  } 
 
+  topend()  
+  {  
+    Swal.fire({  
+      position: 'top-end',  
+      icon: 'success',  
+      title: 'Usted se Logeo exitosamente!',  
+      showConfirmButton: false,
+      customClass: {
+        validationMessage: 'my-validation-message'
+      },
+      preConfirm: (cedula) => {
+        if (!cedula) {
+          Swal.showValidationMessage(
+            '<i class="fa fa-info-circle"></i> Ingrese datos erroneamente'
+          )
+        }
+      },
+    
+      timer: 1500  
+    })  
+  }  
+
+  showError(){
+
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+      footer: '<a href="">Why do I have this issue?</a>'
+    })
+    
+  }
 
   search() {
     if (this.user) {
@@ -70,7 +105,10 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(form: LoginI) {
+    //console.log(form);
+    if(form.cedula.length > 3 && form.password.length > 3){
 
+    
     this.api.loginByCed(form).subscribe(data => {
       if (data.user) {
         this.logIn.cedula = form.cedula;
@@ -92,7 +130,11 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
       }
     })
+  } else {
+    this.showError();
 
+
+  }
   }
 
   sendToken(token: string) {
