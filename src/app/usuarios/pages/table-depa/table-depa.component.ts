@@ -8,6 +8,8 @@ import { User } from '../../interfaces/users.interface';
 import {Depa} from '../../interfaces/dep.interface';
 import { post } from 'jquery';
 import Swal from 'sweetalert2';
+import { Provincia } from '../../interfaces/provincias.interface';
+import { Canton } from '../../interfaces/cantones.interface';
 
 
 declare var $: any;
@@ -23,6 +25,9 @@ export class TableDepaComponent implements OnInit, OnDestroy {
   dtTrigger: Subject<any> = new Subject<any>();
   posts!: any;
 
+  provincias:Provincia[] =[];
+  cantones:Canton[] =[];
+
   constructor(private depaService: DepaService,
     private _router:Router,private route: ActivatedRoute) { }
 
@@ -34,10 +39,68 @@ export class TableDepaComponent implements OnInit, OnDestroy {
       lengthMenu: [5, 10, 25]
     };
 
+    this.depaService.getProvincias().subscribe((data)=>{
+      this.provincias =data.provincias;
+
+    });
+
     this.depaService.getDepas()
       .subscribe((posts:any) => {
-        console.log(post)
         this.posts = posts['data'];
+
+
+         this.provincias.filter(data=>{
+          this.posts.find((dataP:any)=>{
+
+            if(dataP.id_provincia ==data.id_provincia){
+              dataP.id_provincia = data.descripcion;
+
+              this.depaService.getCantones(data)
+              .subscribe((cantones)=>{
+
+                cantones.cantones.find((cantonesData:any)=>{
+
+                  this.posts.find((dataP:any)=>{
+
+                    if(cantonesData.id_canton == dataP.id_canton){
+
+                      const newCanton:Canton ={
+                        descripcion:'',
+                        id_canton:cantonesData.id_canton,
+                        id_provincia:data.id_provincia!
+                      }
+                      dataP.id_canton = cantonesData.descripcion;
+
+                      console.log(newCanton);
+                      this.depaService.getDistritos(newCanton).subscribe((distritos)=>{
+                        distritos.distritos.find((dataDistritos:any)=>{
+                          this.posts.find((dataP:any)=>{
+                            if(dataDistritos.id_distrito == dataP.id_distrito){
+                              dataP.id_distrito = dataDistritos.descripcion;
+                            }
+                          });
+                        })
+                      })
+                    }
+                  });
+
+                })
+              })
+            }
+
+          });
+
+
+
+        })
+       /* console.log(this.provincias.find((data)=>{
+          if(data.id_provincia ===this.posts.id_provincia){
+            return this.posts.id_provincia
+          }
+          return  this.posts.find((dataP:any)=>{
+            console.log(dataP.id_provincia);
+          });
+        }));*/
 
         this.dtTrigger.next(void 0);
       });
@@ -63,7 +126,7 @@ warnAlert(){
     icon: 'error',
     title: 'Oops...',
     text: 'Eliminado exitosamente!',
-  
+
   })
 
 

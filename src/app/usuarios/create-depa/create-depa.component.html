@@ -3,11 +3,40 @@
         <div class="form-left-decoration"></div>
         <div class="form-right-decoration"></div>
         <div class="circle"></div>
+
         <div class="form-inner">
           <h1>Descripcion</h1>
-        
           <input type="text" placeholder="Message..." [(ngModel)]="departamento.descripcion" id="descripcion" name="descripcion" rows="5">
           <button type="submit" (click)="alertaSubmit()" >Submit</button>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Provincias</mat-label>
+            <mat-select placeholder="Provincias" [(value)]="provincia" (selectionChange)="change(provincia)" required>
+
+            <mat-option *ngFor="let p of provincias" [value]="p">{{p.descripcion}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Cantones</mat-label>
+            <mat-select placeholder="Cantones" [(value)]="canton" (selectionChange)="changeCanton(canton)" required>
+
+            <mat-option *ngFor="let c of cantones" [value]="c">{{c.descripcion}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Distritos</mat-label>
+            <mat-select placeholder="Distrtitos" [(value)]="distrito"  required>
+
+            <mat-option *ngFor="let d of distritos" [value]="d">{{d.descripcion}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button type="submit" >Submit</button>
         </div>
+
+
 
       </form>

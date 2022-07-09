@@ -39,7 +39,7 @@ export class EditarComponent implements OnInit {
           this.persona = res.user;
 
 
-          console.log(this.persona.active);
+
           if(this.persona.active != null){
             this.active = '1';
           }else{
