@@ -7,10 +7,12 @@
                     <tr>
                         <th>ID</th>
                         <th>Descripcion</th>
-                        <th>id_Distrito</th>
-                        <th>id_Canton</th>
-                        <th>id_Provincia</th>
-                        <th>id_pais</th>
+                        <th>Distrito</th>
+                        <th>Canton</th>
+                        <th>Provincia</th>
+                        <th>Editar</th>
+
+                        <th>Eliminar</th>
                         <th><button mat-raised-button color="primary" (click)="agregarDButtonClick()">Agregar</button></th>
                     </tr>
                 </thead>
@@ -21,11 +23,10 @@
                         <td>{{ post.id_distrito }}</td>
                         <td>{{ post.id_canton }}</td>
                         <td>{{ post.id_provincia }}</td>
-                        <td>{{ post.id_pais }}</td>
                         <td><button mat-raised-button color="primary" (click)="editarDButtonClick(post.id_departamento)" >
                       Editar
                   </button></td>
-                  <td><button mat-raised-button color="warn" (click)="warnAlert()">
+                  <td><button mat-raised-button color="warn" (click)="warnAlert( post.id_departamento )">
                     Eliminar
                 </button></td>
 

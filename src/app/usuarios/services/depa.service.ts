@@ -40,4 +40,7 @@ export class DepaService {
   getDistritos(canton:any):Observable<any>{
     return this.http.post<any>(`${this.baseURL}/departamento/distritos`,canton);
   }
+  delete(depa:Depa):Observable<Depa>{
+    return this.http.post<Depa>(`${this.baseURL}/departamento/delete`,depa);
+  }
 }
