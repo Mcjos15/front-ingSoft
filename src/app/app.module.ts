@@ -21,6 +21,7 @@ import { CreateDepaComponent } from './usuarios/create-depa/create-depa.componen
 import { SocketIoModule,SocketIoConfig } from 'ngx-socket-io';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReporteriaComponent } from './usuarios/pages/reporteria/reporteria.component';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 
@@ -33,6 +34,7 @@ const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
     CrearUsuarioComponent,
     CreateDepaComponent,
     ReporteriaComponent,
+    ConfirmDialogComponent,
     //TableDepaComponent,
 
   ],

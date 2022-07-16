@@ -16,6 +16,7 @@ import { SolicitudComponent } from './pages/solicitud/solicitud.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -35,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
 
     NgbModule
-    
+
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

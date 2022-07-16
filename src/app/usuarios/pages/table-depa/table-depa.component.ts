@@ -11,9 +11,9 @@ import Swal from 'sweetalert2';
 import { Provincia } from '../../interfaces/provincias.interface';
 import { Canton } from '../../interfaces/cantones.interface';
 import { DataTableDirective } from 'angular-datatables';
+import { ConfirmDialogModel,ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
-
-declare var $: any;
 @Component({
   selector: 'app-table-depa',
   templateUrl: './table-depa.component.html',
@@ -22,6 +22,7 @@ declare var $: any;
 export class TableDepaComponent implements OnInit, OnDestroy {
 
 
+  result: string = '';
   title = 'datatables';
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
@@ -32,7 +33,7 @@ export class TableDepaComponent implements OnInit, OnDestroy {
   cantones:Canton[] =[];
 
   constructor(private depaService: DepaService,
-    private _router:Router,private route: ActivatedRoute) { }
+    private _router:Router,private route: ActivatedRoute,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -174,5 +175,23 @@ reload(){
 
   });
 }
+confirmDialog(id:any): void {
+  const message = `Do you want to save this file?`;
 
+  const dialogData = new ConfirmDialogModel("File Saving Message", message);
+
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    maxWidth: "600px",
+    data: dialogData
+  });
+
+  dialogRef.afterClosed().subscribe(dialogResult => {
+    this.result = dialogResult;
+
+    if(this.result){
+      this.warnAlert(id)
+
+    }
+  });
+}
 }
